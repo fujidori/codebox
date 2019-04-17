@@ -1,0 +1,14 @@
+make
+cp crackme0x00 crackme0x00.hack
+r2 -w crackme0x00.hack
+aaaa
+ie
+iM
+afl
+afll
+pdf @ main
+s 0x00001227 ; seek jne
+wx9090
+q
+./crackme0x00.hack
+radiff2 crackme0x00 crackme0x00.hack
