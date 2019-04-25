@@ -1,0 +1,11 @@
+[package]
+name = "rocket-app"
+version = "0.1.0"
+authors = ["fujidori <jijiji65535ffff@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+rocket = "0.4.0"
+rocket_contrib = { version = "0.4.0", features = ["json"] }
+serde = { version = "1.0.90", features = ["derive"] }
+serde_json = "1.0.39"
