@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <pthread.h>
 #include "mergesort.h"
 
 void MergeSort_Serial(int *array, int n) { mergesort_serial(array, 0, n - 1); }

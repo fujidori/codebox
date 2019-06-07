@@ -1,13 +1,6 @@
 #ifndef _QUICK_SORT_H_
 #define _QUICK_SORT_H_
 
-#include <assert.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include <time.h>
-
 void QuickSort_Serial(int *array, int n);
 void QuickSort_Parallel(int *array, int n, int depth);
 void quicksort_serial(int *array, int left, int right);

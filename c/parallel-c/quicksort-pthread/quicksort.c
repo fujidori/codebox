@@ -1,3 +1,7 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <pthread.h>
 #include "quicksort.h"
 
 void QuickSort_Serial(int *array, int n) { quicksort_serial(array, 0, n - 1); }

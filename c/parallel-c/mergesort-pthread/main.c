@@ -1,4 +1,8 @@
-#include "quicksort.h"
+#include <stdio.h>
+#include <stdlib.h>
+#include <sys/time.h>
+#include <time.h>
+#include "mergesort.h"
 
 #define DEPTH 2  // The total number of threads will be DEPTH^2
 
@@ -8,7 +12,7 @@ int main(int argc, char **argv) {
     struct timeval time_start, time_end;
 
     // data
-    const int data_num = 10000000;
+    const int data_num = 5000000;
     int *array_serial = NULL;
     int *array_parallel = NULL;
     array_serial = (int *)malloc(sizeof(int) * data_num);
@@ -22,35 +26,35 @@ int main(int argc, char **argv) {
     Shuffle(array_parallel, data_num);
 
     // Show data before sorting
-    // printf("Before   serial: ");
+    // printf("Before serial: ");
     // ShowData(array_serial, data_num);
     // printf("Before parallel: ");
     // ShowData(array_parallel, data_num);
 
     // Serial
     gettimeofday(&time_start, NULL);
-    QuickSort_Serial(array_serial, data_num);
+    MergeSort_Serial(array_serial, data_num);
     gettimeofday(&time_end, NULL);
 
     // Display execution time in serial
-    printf("%s", "Serial:");
+    printf("%s", "Serial: ");
     printf("%.3lf ms\n", ((time_end.tv_sec - time_start.tv_sec) +
                           (time_end.tv_usec - time_start.tv_usec) * 1.0E-6) *
                              1000);
 
     // Parallel
     gettimeofday(&time_start, NULL);
-    QuickSort_Parallel(array_parallel, data_num, DEPTH);
+    MergeSort_Parallel(array_parallel, data_num, DEPTH);
     gettimeofday(&time_end, NULL);
 
     // Display execution time in parallel
-    printf("%s", "Parallel:");
+    printf("%s", "Parallel: ");
     printf("%.3lf ms\n", ((time_end.tv_sec - time_start.tv_sec) +
                           (time_end.tv_usec - time_start.tv_usec) * 1.0E-6) *
                              1000);
 
     // Show data after sorting
-    // printf("After   serial: ");
+    // printf("After serial: ");
     // ShowData(array_serial, data_num);
     // printf("After parallel: ");
     // ShowData(array_parallel, data_num);

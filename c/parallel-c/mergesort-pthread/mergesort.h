@@ -1,13 +1,6 @@
 #ifndef _MERGE_SORT_H_
 #define _MERGE_SORT_H_
 
-#include <assert.h>
-#include <pthread.h>
-#include <stdio.h>
-#include <stdlib.h>
-#include <sys/time.h>
-#include <time.h>
-
 void MergeSort_Serial(int *array, int n);
 void MergeSort_Parallel(int *array, int n, int depth);
 void mergesort_serial(int *array, int left, int right);
