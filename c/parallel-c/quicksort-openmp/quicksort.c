@@ -1,3 +1,6 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <omp.h>
 #include "quicksort.h"
 
 void QuickSort_Serial(int *array, int n) { quicksort_serial(array, 0, n - 1); }
